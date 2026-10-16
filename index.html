@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Bubble Shooter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <div id="hud">
+    <button class="ib" id="bp" aria-label="Pausar">II</button>
+    <div class="st">
+      <div class="chip"><small>Nível</small><b id="hl">1</b></div>
+      <div class="chip"><small>Pontos</small><b id="hs">0</b></div>
+      <div class="chip"><small>Recorde</small><b id="hb">0</b></div>
+    </div>
+    <div class="hr"><button class="ib" id="bh" aria-label="Como jogar">?</button><button class="ib" id="bs" aria-label="Som">♪</button></div>
+  </div>
+  <div id="stage"><canvas id="cv" aria-label="Área do jogo"></canvas></div>
+</div>
+
+<div id="ov">
+  <div class="card on" id="c-menu">
+    <h1><span>BUBBLE</span><span>SHOOTER</span></h1>
+    <div class="dots">
+      <i style="--a:#ff3b4e;--b:#ff9aa4;--d:#b3001a"></i><i style="--a:#ff9a1f;--b:#ffd08a;--d:#b85a00"></i><i style="--a:#ffe033;--b:#fff6a8;--d:#c7a100"></i><i style="--a:#8be31f;--b:#d4ff8a;--d:#3f8a00"></i><i style="--a:#2d6bff;--b:#8fb2ff;--d:#0a2f9e"></i><i style="--a:#a447ff;--b:#d6a8ff;--d:#5a14a8"></i><i style="--a:#ff6fc8;--b:#ffc0e8;--d:#b0207f"></i>
+    </div>
+    <button class="btn p" data-a="play">Jogar</button>
+    <button class="btn" data-a="rec">Recordes</button>
+    <button class="btn" data-a="how">Como jogar</button>
+    <button class="btn" data-a="snd">Som: ligado</button>
+  </div>
+  <div class="card" id="c-how">
+    <h2>Como jogar</h2>
+    <ul>
+      <li>Celular: arraste para mirar e solte para atirar.</li>
+      <li>PC: mouse para mirar e clique para atirar. Setas ajustam, Espaço atira, X troca.</li>
+      <li>A bolha <b>PRÓXIMA</b> é a que vem depois da atual. Toque nela (ou aperte X) para trocar.</li>
+      <li>Junte 3 ou mais bolhas da mesma cor. Bolhas soltas caem e valem mais.</li>
+      <li><b>Bomba:</b> explode as bolhas ao redor.</li>
+      <li><b>Arco-íris:</b> estoura o grupo da cor que ela tocar.</li>
+      <li>Errou vários tiros? Desce uma fileira. Não passe da linha vermelha.</li>
+    </ul>
+    <button class="btn p" data-a="hback">Voltar</button>
+  </div>
+  <div class="card" id="c-rec">
+    <h2>Recordes</h2>
+    <ol id="rl"></ol>
+    <button class="btn p" data-a="menu">Voltar</button>
+    <button class="btn sm" data-a="clear">Apagar recordes</button>
+  </div>
+  <div class="card" id="c-pause">
+    <h2>Pausado</h2>
+    <button class="btn p" data-a="resume">Continuar</button>
+    <button class="btn" data-a="restart">Reiniciar</button>
+    <button class="btn" data-a="menu">Menu</button>
+  </div>
+  <div class="card" id="c-win">
+    <h2>Nível concluído!</h2>
+    <div class="big" id="wscore">0</div>
+    <p>pontos até aqui</p>
+    <button class="btn p" data-a="next">Próximo nível</button>
+    <button class="btn" data-a="menu">Menu</button>
+  </div>
+  <div class="card" id="c-over">
+    <h2>Fim de jogo</h2>
+    <div class="big" id="oscore">0</div>
+    <p id="orec">pontos</p>
+    <button class="btn p" data-a="restart">Jogar de novo</button>
+    <button class="btn" data-a="rec">Recordes</button>
+    <button class="btn" data-a="menu">Menu</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
